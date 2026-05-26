@@ -2,11 +2,25 @@
 
 :root {
   --bg-color: #0c0d16;
+  --card-bg: rgba(20, 21, 38, 0.55);
   --text-primary: #f3f4f6;
   --font-main: 'Outfit', sans-serif;
 }
+
 body {
   font-family: var(--font-main);
   background-color: var(--bg-color);
   color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 540px;
+  background: var(--card-bg);
+  border-radius: 30px;
+  padding: 35px;
 }
