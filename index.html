@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taskflow | Premium To-Do List</title>
+  <meta name="description" content="Taskflow - A premium, dark glassmorphic To-Do list web application to track your daily progress with beautiful transitions and LocalStorage persistence.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,13 +12,64 @@
   <div class="bg-blobs">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
   </div>
 
   <main class="app-container">
     <header class="app-header">
-      <h1 class="greeting-title">Hello, Explorer</h1>
+      <div class="header-top">
+        <div class="greeting-section">
+          <h1 class="greeting-title" id="greeting-title">Hello, Explorer</h1>
+          <p class="greeting-subtitle" id="greeting-subtitle">Let's accomplish your targets today!</p>
+        </div>
+        <div class="date-badge" id="current-date"></div>
+      </div>
+      
+      <!-- Progress Panel -->
+      <div class="progress-panel">
+        <div class="progress-info">
+          <span class="progress-text" id="progress-ratio">0 of 0 completed</span>
+          <span class="progress-sub">Daily Progress</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-indicator"></div>
+          </div>
+        </div>
+        <div class="progress-percentage" id="progress-percent">0%</div>
+      </div>
     </header>
+
+    <!-- Add Task Input Form -->
+    <form class="task-form" id="todo-form">
+      <div class="input-wrapper">
+        <input type="text" class="task-input" id="todo-input" placeholder="Add a new task..." autocomplete="off" required>
+        <div class="input-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+        </div>
+      </div>
+      <button type="submit" class="add-button" aria-label="Add Task">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+    </form>
+
+    <!-- Category & Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" id="filter-all" data-filter="all">All</button>
+      <button class="filter-btn" id="filter-pending" data-filter="pending">Pending</button>
+      <button class="filter-btn" id="filter-completed" data-filter="completed">Completed</button>
+    </div>
+
+    <!-- Task List Container -->
+    <div class="tasks-container" id="tasks-list" role="list">
+      <!-- Dynamic list items will be injected here by app.js -->
+    </div>
   </main>
+
   <script src="app.js"></script>
 </body>
 </html>

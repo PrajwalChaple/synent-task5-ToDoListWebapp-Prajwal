@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const storedTasks = localStorage.getItem('taskflow_tasks');
       tasks = storedTasks ? JSON.parse(storedTasks) : [
         // Default tasks for a premium onboarding feel if storage is empty
-        { id: '1', text: 'Welcome to Taskflow! âœ¨', completed: false },
+        { id: '1', text: 'Welcome to Taskflow! ✨', completed: false },
         { id: '2', text: 'Click the circle to mark a task as completed', completed: true },
         { id: '3', text: 'Try deleting this task using the trash button', completed: false }
       ];
@@ -78,16 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let subtitle = "Let's accomplish your targets today!";
 
     if (hour < 12) {
-      salutation = 'Good morning, Creator â˜€ï¸';
+      salutation = 'Good morning, Creator ☀️';
       subtitle = 'Start your day fresh and productive.';
     } else if (hour < 17) {
-      salutation = 'Good afternoon, Builder âš¡';
+      salutation = 'Good afternoon, Builder ⚡';
       subtitle = 'Keep up the excellent momentum!';
     } else if (hour < 21) {
-      salutation = 'Good evening, Achiever ðŸŒ†';
+      salutation = 'Good evening, Achiever 🌆';
       subtitle = 'Let us wrap up today\'s goals.';
     } else {
-      salutation = 'Settle in, Planner ðŸŒ™';
+      salutation = 'Settle in, Planner 🌙';
       subtitle = 'Time to plan ahead for tomorrow.';
     }
 
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (currentFilter === 'pending') {
       title = 'Everything Complete!';
-      desc = 'You have completed all pending tasks. Outstanding work! ðŸŽ‰';
+      desc = 'You have completed all pending tasks. Outstanding work! 🎉';
       iconSvg = `
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     } else if (currentFilter === 'completed') {
       title = 'No Finished Tasks';
-      desc = 'Complete some of your tasks above to view them here. ðŸ’ª';
+      desc = 'Complete some of your tasks above to view them here. 💪';
       iconSvg = `
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
