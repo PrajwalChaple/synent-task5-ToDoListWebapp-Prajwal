@@ -4,5 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const tasksContainer = document.getElementById('tasks-list');
 
   let tasks = [];
-  console.log('State initialized');
+
+  function loadTasksFromStorage() {
+    const storedTasks = localStorage.getItem('taskflow_tasks');
+    tasks = storedTasks ? JSON.parse(storedTasks) : [];
+  }
+
+  function saveTasksToStorage() {
+    localStorage.setItem('taskflow_tasks', JSON.stringify(tasks));
+  }
+
+  loadTasksFromStorage();
 });
